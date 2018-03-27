@@ -5,18 +5,18 @@ https://chrome.google.com/webstore/detail/ads-link-skiper/bkpeohkfimdfogdnpcnokj
 
 Suported sites:
 
-croco.site
+* croco.site
 
-sh.st
-clkmein.com
-viid.me
-xiw34.com
-destyy.com
-ceesty.com
-clkme.me
-cllkme.com
-corneey.com
-festyy.com
+* sh.st
+* clkmein.com
+* viid.me
+* xiw34.com
+* destyy.com
+* ceesty.com
+* clkme.me
+* cllkme.com
+* corneey.com
+* festyy.com
 gestyy.com
 jnw0.com
 qaafa.com
