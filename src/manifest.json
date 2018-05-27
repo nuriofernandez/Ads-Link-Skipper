@@ -1,6 +1,6 @@
 {
     "name": "Ads Link Skiper",
-    "version": "1.4.3",
+    "version": "1.4.5",
     "description": "Skip ads on sites like adf.ly and prevent spam popups",
     "permissions": [
         "tabs",
@@ -14,6 +14,10 @@
 
         "*://*.ouo.io/*",
         "*://*.ouo.press/*",
+
+        "*://*.cuon.io/*",
+        
+        "*://*.tmearn.com/*",
 
         "*://*.sh.st/*",
         "*://*.clkmein.com/*",
@@ -30,6 +34,8 @@
         "*://*.qaafa.com/*",
         "*://*.wiid.me/*",
 		
+        "*://*.clearload.bid/*",
+        "*://*.restorecosm.bid/*",
 		"*://*.agileurbia.com/*",
 		"*://*.threadsphere.bid/*",
 		"*://*.zipteria.com/*",
@@ -67,7 +73,23 @@
 		"*://*.skamason.com/*",
 
         "*://*.linkshrink.net/*",
-
+        
+        "*://*.higheurest.com/*",
+        "*://*.adviewgroup.com/*",
+        "*://*.ajkzd9h.com/*",
+        "*://*.scrn-supp-6689.cf/*",
+        "*://*.lyuoaxruaqdo.com/*",
+        "*://*.sax.peakonspot.com/*",
+		"*://*.sistacked.com/*",
+        "*://*.funsafetab.com/*",
+        "*://*.geniusdisplay.com/*",
+        "*://*.38newupdate.xyz/*",
+        "*://*.adtrker.com/*",
+        "*://*.elvenar.com/*",
+        "*://*.vpn-freeproxy.com/*",
+        "*://*.mellowads.com/*",
+		"*://*.superimad.com/*",
+		"*://*.hibids10.com/*",
         "*://*.gamezjet.com/*",
         "*://*.fftrak.pro/*",
         "*://*.translationbuddy.com/*",
@@ -123,7 +145,9 @@
         "*://*.fas.li/*",
 
         "*://*.jzrputtbut.net/*",
-        "*://*.linkbucks.com/*"
+        "*://*.linkbucks.com/*",
+		
+		"*://www.google.com/recaptcha/*"
     ],
 
     "icons": {
