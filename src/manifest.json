@@ -16,7 +16,7 @@
         "*://*.ouo.press/*",
 
         "*://*.cuon.io/*",
-        
+
         "*://*.tmearn.com/*",
 
         "*://*.sh.st/*",
@@ -33,13 +33,13 @@
         "*://*.jnw0.com/*",
         "*://*.qaafa.com/*",
         "*://*.wiid.me/*",
-		
+
         "*://*.clearload.bid/*",
         "*://*.restorecosm.bid/*",
-		"*://*.agileurbia.com/*",
-		"*://*.threadsphere.bid/*",
-		"*://*.zipteria.com/*",
-		"*://*.queuecosm.bid/*",
+        "*://*.agileurbia.com/*",
+        "*://*.threadsphere.bid/*",
+        "*://*.zipteria.com/*",
+        "*://*.queuecosm.bid/*",
         "*://*.yobuilder.com/*",
         "*://*.quamiller.com/*",
         "*://*.microify.com/*",
@@ -70,17 +70,17 @@
         "*://*.tinyium.com/*",
         "*://*.viahold.com/*",
         "*://*.zo.ee/*",
-		"*://*.skamason.com/*",
+        "*://*.skamason.com/*",
 
         "*://*.linkshrink.net/*",
-        
+
         "*://*.higheurest.com/*",
         "*://*.adviewgroup.com/*",
         "*://*.ajkzd9h.com/*",
         "*://*.scrn-supp-6689.cf/*",
         "*://*.lyuoaxruaqdo.com/*",
         "*://*.sax.peakonspot.com/*",
-		"*://*.sistacked.com/*",
+        "*://*.sistacked.com/*",
         "*://*.funsafetab.com/*",
         "*://*.geniusdisplay.com/*",
         "*://*.38newupdate.xyz/*",
@@ -88,8 +88,8 @@
         "*://*.elvenar.com/*",
         "*://*.vpn-freeproxy.com/*",
         "*://*.mellowads.com/*",
-		"*://*.superimad.com/*",
-		"*://*.hibids10.com/*",
+        "*://*.superimad.com/*",
+        "*://*.hibids10.com/*",
         "*://*.gamezjet.com/*",
         "*://*.fftrak.pro/*",
         "*://*.translationbuddy.com/*",
@@ -121,9 +121,9 @@
         "*://*.durined.com/*",
         "*://*.optimum-io-speed.site/*",
         "*://*.forminine.com/*",
-		"*://*.girrrly.com/*",
-		"*://*.baiduccdn.com/*",
-		"*://*.top10posts.com/*",
+        "*://*.girrrly.com/*",
+        "*://*.baiduccdn.com/*",
+        "*://*.top10posts.com/*",
         "*://*.onclkds.com/*",
         "*://*.onclickclear.com/*",
         "*://*.juegos-online.info/*",
@@ -146,8 +146,8 @@
 
         "*://*.jzrputtbut.net/*",
         "*://*.linkbucks.com/*",
-		
-		"*://www.google.com/recaptcha/*"
+
+        "*://www.google.com/recaptcha/*"
     ],
 
     "icons": {
