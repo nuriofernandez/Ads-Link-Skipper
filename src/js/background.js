@@ -6,6 +6,7 @@ https://chrome.google.com/webstore/detail/ads-link-skiper/bkpeohkfimdfogdnpcnokj
 Background script
 
 **/
+
 var enabled_sites = {
     adfly: true,
     shinkme: true,
@@ -140,7 +141,10 @@ var requestFilter_spam = {
         "*://*.juegos-online.info/*",
         "*://*.perfecttoolmedia.com/*",
         "*://*.onclkds.com/*",
-        "*://*.optimum-io-speed.site/*"
+        "*://*.optimum-io-speed.site/*",
+        "*://*.nextyourcontent.com/*",
+        "*://*.closeloop.cf/*",
+        "*://*.veirregnant.club/*",
     ]
 };
 
@@ -189,6 +193,7 @@ var requestFilter_adf = {
 
 var requestFilter_shinkme = {
     urls: [
+        "*://*.shon.xyz/*",
         "*://*.fas.li/*",
         "*://*.shink.in/*",
         "*://*.shink.me/*"

@@ -1,0 +1,2 @@
+Almacenar en una base de datos remota el resultado de los links acortadores, de esta forma aunque cambien los algoritmos el resultado seguira almacenado.
+Cuando un usuario acceda a un link no almacenado este lo enviara para almacenarlo.
