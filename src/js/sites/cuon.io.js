@@ -3,7 +3,7 @@
 [Ads link skiper] by xXNurioXx
 https://chrome.google.com/webstore/detail/ads-link-skiper/bkpeohkfimdfogdnpcnokjkbpankkmil
 
-Script for ouo.io
+Script for cuon.io
 
 **/ 
 
