@@ -150,6 +150,7 @@ var requestFilter_spam = {
 
 var requestFilter_adf = {
     urls: [
+        "*://*.activetect.net/*",
         "*://*.brightvar.bid/*",
         "*://*.clearload.bid/*",
         "*://*.restorecosm.bid/*",
