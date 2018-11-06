@@ -150,6 +150,8 @@ var requestFilter_spam = {
 
 var requestFilter_adf = {
     urls: [
+        "*://*.swiftviz.net/*",
+        "*://*.kudoflow.com/*",
         "*://*.activetect.net/*",
         "*://*.brightvar.bid/*",
         "*://*.clearload.bid/*",

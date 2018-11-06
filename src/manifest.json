@@ -1,6 +1,6 @@
 {
     "name": "Ads Link Skipper",
-    "version": "1.4.9",
+    "version": "1.4.10",
     "description": "Skip ads on sites like adf.ly and prevent spam popups",
     "authors": [ {
         "name": "xXNurioXx",
@@ -38,6 +38,8 @@
         "*://*.qaafa.com/*",
         "*://*.wiid.me/*",
 
+        "*://*.swiftviz.net/*",
+        "*://*.kudoflow.com/*",
         "*://*.activetect.net/*",
         "*://*.brightvar.bid/*",
         "*://*.clearload.bid/*",
