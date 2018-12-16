@@ -150,6 +150,7 @@ var requestFilter_spam = {
 
 var requestFilter_adf = {
     urls: [
+        "*://*.vaussneim.net/*",
         "*://*.briskgram.net/*",
         "*://*.swiftviz.net/*",
         "*://*.kudoflow.com/*",
