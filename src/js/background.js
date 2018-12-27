@@ -7,6 +7,8 @@ Background script
 
 **/
 
+
+// Enabled sites variable switch
 var enabled_sites = {
     adfly: true,
     shinkme: true,
@@ -18,6 +20,8 @@ var enabled_sites = {
     captcha: false,
     spam: true
 }
+
+/******************** Storage manager start */
 
 function save_sites() {
     chrome.storage.local.set({
@@ -53,8 +57,12 @@ chrome.storage.local.get('enabled_sites', function(result) {
 
 });
 
+/******************** Storage manager end */
 
 
+/******************** Domain list start */
+
+// sh.st domain list
 var requestFilter_sh = {
     urls: [
         "*://*.sh.st/*",
@@ -75,6 +83,7 @@ var requestFilter_sh = {
     ]
 };
 
+// Spam/Popup's domain list
 var requestFilter_spam = {
     urls: [
         "*://*.higheurest.com/*",
@@ -148,8 +157,11 @@ var requestFilter_spam = {
     ]
 };
 
+// Adf.ly domains list
 var requestFilter_adf = {
     urls: [
+        "*://*.cinebo.net/*",
+        "*://*.dapalan.com/*",
         "*://*.vaussneim.net/*",
         "*://*.briskgram.net/*",
         "*://*.swiftviz.net/*",
@@ -197,6 +209,7 @@ var requestFilter_adf = {
     ]
 };
 
+// shink.me domain list
 var requestFilter_shinkme = {
     urls: [
         "*://*.shon.xyz/*",
@@ -206,6 +219,7 @@ var requestFilter_shinkme = {
     ]
 };
 
+// ouo.io domain list
 var requestFilter_ouo = {
     urls: [
         "*://*.ouo.io/*",
@@ -213,35 +227,45 @@ var requestFilter_ouo = {
     ]
 };
 
+// cuon domain list
 var requestFilter_cuon = {
     urls: [
         "*://*.cuon.io/*"
     ]
 };
 
+// tmearn domain list
 var requestFilter_tmearn = {
     urls: [
         "*://*.tmearn.com/*"
     ]
 };
 
+// croco domain list
 var requestFilter_croco = {
     urls: [
         "*://*.croco.site/*"
     ]
 };
 
+// LinkShrink domain list
 var requestFilter_linkshrink = {
     urls: [
         "*://*.linkshrink.net/*"
     ]
 };
 
+// Google Captcha experiment. (Not enabled)
 var requestFilter_captcha = {
     urls: [
         "*://www.google.com/recaptcha/*"
     ]
 };
+
+/******************** Domain list end */
+
+
+/******************** Sites script's start */
 
 /** Captcha sites **/
 chrome.webRequest.onCompleted.addListener(function(details) {
@@ -253,6 +277,7 @@ chrome.webRequest.onCompleted.addListener(function(details) {
     });
 }, requestFilter_captcha);
 
+
 /** Adf.ly sites **/
 chrome.webRequest.onCompleted.addListener(function(details) {
     if (!enabled_sites.adfly) return;
@@ -262,6 +287,7 @@ chrome.webRequest.onCompleted.addListener(function(details) {
     });
 }, requestFilter_adf);
 
+
 /** Cuon.io sites **/
 chrome.webRequest.onCompleted.addListener(function(details) {
     if (!enabled_sites.cuon) return;
@@ -270,6 +296,7 @@ chrome.webRequest.onCompleted.addListener(function(details) {
         runAt: "document_start"
     });
 }, requestFilter_cuon);
+
 
 /** Croco.sites sites **/
 chrome.webRequest.onCompleted.addListener(function(details) {
@@ -320,6 +347,7 @@ chrome.webRequest.onBeforeSendHeaders.addListener(function(details) {
     };
 }, requestFilter_ouo, ['requestHeaders', 'blocking']);
 
+
 /** LinkShrink sites **/
 chrome.webRequest.onCompleted.addListener(function(details) {
     if (!enabled_sites.linkshrink) return;
@@ -348,3 +376,5 @@ chrome.webRequest.onBeforeSendHeaders.addListener(function(details) {
         requestHeaders: headers
     };
 }, requestFilter_sh, ['requestHeaders', 'blocking']);
+
+/******************** Sites script's end */
