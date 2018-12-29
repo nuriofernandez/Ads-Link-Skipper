@@ -16,9 +16,10 @@ var enabled_sites = {
     croco: true,
     linkshrink: true,
     ouo: true,
-    cuon: false,
+    bluemediafiles: true,
+    spam: true,
     captcha: false,
-    spam: true
+    cuon: false
 }
 
 /******************** Storage manager start */
@@ -44,12 +45,14 @@ chrome.storage.local.get('enabled_sites', function(result) {
             croco: true,
             linkshrink: true,
             ouo: true,
-            cuon: false,
+            bluemediafiles: true,
+            spam: true,
             captcha: false,
-            spam: true
+            cuon: false
         }
     }
 
+    // Disable disabled functions
     if ((enabled_sites != null && enabled_sites.captcha == null)) {
         enabled_sites.captcha = false;
         enabled_sites.cuon = false;
@@ -255,10 +258,10 @@ var requestFilter_linkshrink = {
     ]
 };
 
-// Google Captcha experiment. (Not enabled)
-var requestFilter_captcha = {
+// Bluemediafiles domain list.
+var requestFilter_bluemefi = {
     urls: [
-        "*://www.google.com/recaptcha/*"
+        "*://*.bluemediafiles.com/*"
     ]
 };
 
@@ -267,15 +270,14 @@ var requestFilter_captcha = {
 
 /******************** Sites script's start */
 
-/** Captcha sites **/
+/** Bluemediafiles sites **/
 chrome.webRequest.onCompleted.addListener(function(details) {
-    if (!enabled_sites.captcha) return;
+    if (!enabled_sites.bluemediafiles) return;
     chrome.tabs.executeScript(details.tabId, {
-        file: "js/sites/recaptcha.js",
-        runAt: "document_start",
-        allFrames: true
+        file: "js/sites/BlueMediaFiles.js",
+        runAt: "document_start"
     });
-}, requestFilter_captcha);
+}, requestFilter_bluemefi);
 
 
 /** Adf.ly sites **/

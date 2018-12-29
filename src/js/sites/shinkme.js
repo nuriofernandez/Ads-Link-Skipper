@@ -76,6 +76,7 @@ function submit(){
 	}
 }
 
+/* xPath function */
 function xp(query) {
     return document.evaluate(query, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
 }

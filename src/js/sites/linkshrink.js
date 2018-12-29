@@ -30,14 +30,17 @@ function skip() {
     
 }
 
+/** xPath length funciton */
 function xpL(query) {
     return document.evaluate(query, document, null, XPathResult.ORDERED_NODE_SNAPSHOT_TYPE, null).snapshotLength;
 }
 
+/** xPath function */
 function xp(query) {
-    return document.evaluate(query, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue
+	return document.evaluate(query, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue
 }
 
+/* Decrypt the url result function */
 function revC(ine) {
     var b64 = {
         _keyStr: "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=",

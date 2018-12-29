@@ -1,6 +1,6 @@
 {
     "name": "Ads Link Skipper",
-    "version": "1.4.13",
+    "version": "1.5.1",
     "description": "Skip ads on sites like adf.ly and prevent spam popups",
     "authors": [ {
         "name": "xXNurioXx",
@@ -161,7 +161,9 @@
         "*://*.fas.li/*",
 
         "*://*.jzrputtbut.net/*",
-        "*://*.linkbucks.com/*"
+        "*://*.linkbucks.com/*",
+
+        "*://*.bluemediafiles.com/*"
     ],
 
     "icons": {

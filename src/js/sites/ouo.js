@@ -7,17 +7,20 @@ Script for ouo.io
 
 **/ 
 
-window.onload = function(){
+window.addEventListener("load", () => {
 
+	// Locate the skip button
 	var btn = xp('//*[@id="btn-main"]');
+	
+	// When the button have the value "get link" submit the form
 	if(btn != null && btn.innerHTML == "Get Link"){
 		var form = xp('/html/body/section/div/div/div/div/div/form');
 		form.submit();
 	}
 	
-}
+});
 
-
+/* xPath function */
 function xp(query) {
     return document.evaluate(query, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
 }

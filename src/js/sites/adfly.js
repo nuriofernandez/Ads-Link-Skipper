@@ -10,11 +10,13 @@ Script for adf.ly
 // Thankyou to https://github.com/StoreClerk/AdF.ly-Skipper/blob/master/AdF.ly%20Skipper/js/script.js
 // Tankyou to tote.ervin (PD: Add me to your code too!)
 
+// Event runners
 document.addEventListener('DOMNodeRemoved', skip, false);
 document.addEventListener('DOMContentLoaded', function(){ 
 	document.removeEventListener('DOMNodeRemoved', skip, false);
 });
 
+/** Skip adf.ly function */
 function skip(){
 	var ysmm = /ysmm = \'(.*?)\';/gi;
 	var code = ysmm.exec(document.getElementsByTagName('html')[0].innerHTML);
@@ -43,6 +45,7 @@ function skip(){
 	window.location = url;
 }
 
+/** Adblock Warning banner */
 setTimeout(verifyLock, 500);
 function verifyLock() {
 	var time = setTimeout(verifyLock, 500);
@@ -59,13 +62,14 @@ function verifyLock() {
 	}
 }
 
+// I rlly don't know what is this. By the way i let it here by now xD
 if (document instanceof HTMLDocument) {
 	var script = document.createElement('script');
 	script.textContent = code;
 	document.documentElement.appendChild(script);
 }
 
-
+/** xPath function */
 function xp(query) {
 	return document.evaluate(query, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue
 }
