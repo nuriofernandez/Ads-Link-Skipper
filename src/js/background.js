@@ -163,6 +163,7 @@ var requestFilter_spam = {
 // Adf.ly domains list
 var requestFilter_adf = {
     urls: [
+        "*://*.thouth.net/*",
         "*://*.cinebo.net/*",
         "*://*.dapalan.com/*",
         "*://*.vaussneim.net/*",
