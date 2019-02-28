@@ -131,8 +131,13 @@ input:checked + .slider {
   background-color: #5cd14f;
 }
 
+input:checked:disabled + .slider {
+    background-color: #dad200;
+}
+
 input:checked + .slider:before {
   -webkit-transform: translateX(15px);
   -ms-transform: translateX(15px);
   transform: translateX(15px);
 }
+

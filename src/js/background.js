@@ -163,6 +163,7 @@ var requestFilter_spam = {
 // Adf.ly domains list
 var requestFilter_adf = {
     urls: [
+        "*://*.uclaut.net/*",
         "*://*.atabencot.net/*",
         "*://*.thouth.net/*",
         "*://*.cinebo.net/*",
@@ -324,8 +325,8 @@ chrome.webRequest.onCompleted.addListener(function(details) {
     });
 }, requestFilter_shinkme);
 
-
 /** ouo.io sites **/
+/* CURRENT DISABLED
 chrome.webRequest.onCompleted.addListener(function(details) {
     if (!enabled_sites.ouo || details.url.split("/")[3] == "rgo" && details.type != "main_frame") return;
     chrome.tabs.executeScript(details.tabId, {
@@ -333,6 +334,7 @@ chrome.webRequest.onCompleted.addListener(function(details) {
         runAt: "document_start"
     });
 }, requestFilter_ouo);
+*/
 
 chrome.webRequest.onBeforeSendHeaders.addListener(function(details) {
     if (!enabled_sites.ouo || details.url.split("/")[3] != "go" || details.url.split("/").lenght == 5) return;
