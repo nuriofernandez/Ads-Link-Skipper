@@ -25,12 +25,15 @@ window.onload = function(){
     spam.onclick = function(){chrome.extension.getBackgroundPage().enabled_sites.spam = spam.checked; chrome.extension.getBackgroundPage().save_sites();}
 
     adfly.checked = chrome.extension.getBackgroundPage().enabled_sites.adfly;
-    ouo.checked = chrome.extension.getBackgroundPage().enabled_sites.ouo;
     shst.checked = chrome.extension.getBackgroundPage().enabled_sites.shst;
     shinkme.checked = chrome.extension.getBackgroundPage().enabled_sites.shinkme;
     croco.checked = chrome.extension.getBackgroundPage().enabled_sites.croco;
     linkshrink.checked = chrome.extension.getBackgroundPage().enabled_sites.linkshrink;
     bluemediafiles.checked = chrome.extension.getBackgroundPage().enabled_sites.bluemediafiles;
     spam.checked = chrome.extension.getBackgroundPage().enabled_sites.spam;
+
+    //ouo.checked = chrome.extension.getBackgroundPage().enabled_sites.ouo;
+    ouo.checked = true;
+
 }
 

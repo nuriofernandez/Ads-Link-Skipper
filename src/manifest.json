@@ -2,7 +2,7 @@
     "name": "Ads Link Skipper",
     "version": "1.5.5",
     "description": "Skip ads on sites like adf.ly and prevent spam popups",
-    "authors": [ {
+    "author": [ {
         "name": "xXNurioXx",
         "email": "xxnurioxx@gmail.com"
     }],
