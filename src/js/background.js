@@ -163,6 +163,7 @@ var requestFilter_spam = {
 // Adf.ly domains list
 var requestFilter_adf = {
     urls: [
+        "*://*.evassmat.com/*",
         "*://*.gloyah.net/*",
         "*://*.uclaut.net/*",
         "*://*.atabencot.net/*",
@@ -353,6 +354,48 @@ chrome.webRequest.onBeforeSendHeaders.addListener(function(details) {
     return {
         requestHeaders: details.requestHeaders
     };
+}, requestFilter_ouo, ['requestHeaders', 'blocking']);
+
+
+chrome.webRequest.onHeadersReceived.addListener(function (details) {
+    if(details.type != "main_frame") return;
+    for (var n in details.responseHeaders) {
+        if(details.responseHeaders[n].name.toLowerCase() != "location") continue;
+        let location = details.responseHeaders[n].value;
+        console.log(details.initiator + "," + location);
+    }
+    console.log(details);
+},requestFilter_ouo,["blocking", "responseHeaders"]);
+
+*/
+
+chrome.webRequest.onCompleted.addListener(function(details) {
+    if(details.type != "main_frame") return;
+    console.log(details);
+},requestFilter_ouo, ['responseHeaders']);
+
+/*
+
+chrome.webRequest.onBeforeSendHeaders.addListener(function(details) {
+    //if (!enabled_sites.ouo || details.url.split("/")[3] != "go" || details.url.split("/").lenght == 5) return;
+    /*
+    var newRef = "http://ouo.io/" + details.url.split("/")[4];
+    var gotRef = false;
+    for (var n in details.requestHeaders) {
+        gotRef = details.requestHeaders[n].name.toLowerCase() == "referer";
+        if (gotRef) break;
+    }
+    if (!gotRef) chrome.tabs.update(details.tabId, {
+        "url": newRef
+    });
+    console.log("Unbugged ouo: " + newRef);
+    return {
+        requestHeaders: details.requestHeaders
+    };
+    
+
+    console.log(details);
+
 }, requestFilter_ouo, ['requestHeaders', 'blocking']);
 */
 
