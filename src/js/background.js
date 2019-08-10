@@ -163,6 +163,7 @@ var requestFilter_spam = {
 // Adf.ly domains list
 var requestFilter_adf = {
     urls: [
+        "*://*.xterca.net/*",
         "*://*.evassmat.com/*",
         "*://*.gloyah.net/*",
         "*://*.uclaut.net/*",
