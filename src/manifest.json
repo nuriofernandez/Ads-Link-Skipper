@@ -2,9 +2,9 @@
     "name": "Ads Link Skipper",
     "version": "1.6.3",
     "description": "Skip ads on sites like adf.ly and prevent spam popups",
-    "author": [ {
+    "author": [{
         "name": "xXNurioXx",
-        "email": "xxnurioxx@gmail.com"
+        "email": "personal@nurio.me"
     }],
     "permissions": [
         "tabs",
@@ -37,7 +37,7 @@
         "*://*.jnw0.com/*",
         "*://*.qaafa.com/*",
         "*://*.wiid.me/*",
-        
+
         "*://*.larati.net/*",
         "*://*.xterca.net/*",
         "*://*.evassmat.com/*",

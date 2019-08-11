@@ -1,106 +1,121 @@
 <html>
+
 <head>
-	<meta charset="UTF-8">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-	<link rel="stylesheet" href="style.css">
-	<script src="popup.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="popup.js"></script>
 </head>
+
 <body style="width: 325px;height: 300px;">
-	
-	<table class="table-head">
-		<tr class="header">
-			<td><img src="../media/icon.png" class="logo" width="90px"></td>
-			<td><h1>Ads Link Skiper</h1></td>
-		</tr>
-	</table>
-	<table class="table-donate">
-		<tr class="donate">
-			<td><h4>Power by xXNurioXx</h4></td>
-			<td><a class="btn btn-danger" href="https://www.paypal.me/Nurio" target="_blank">Donate</a></td>
-		</tr>
-	</table>
 
-	<table class="table-active-sites">
-		<tr class="title">
-			<td>Status</td><td>Site (Groups)</td>
+    <div class="top-bar">
+        <div class="bar-brand">
+            <div class="bar-logo"><img src="../media/icon.png" class="logo"></div>
+            <div class="bar-name">
+                <h1>Ads Link Skiper</h1>
+            </div>
+        </div>
+        <div class="bar-credits">
+            <div class="bar-credit">
+                <h4>Power by <a href="https://nurio.me" target="_blank">nurio.me</a></h4>
+            </div>
+            <div class="bar-donate"><a class="btn btn-danger btn-donate" href="https://www.paypal.me/Nurio" target="_blank">Donate</a></div>
+        </div>
+    </div>
 
-		</tr>
+    <div class="section-grid">
+        <div class="section-row no-upperline">
+            <div class="site-toggle text-upper ml6p">Status</div>
+            <div class="site-name text-upper">Site's group name</div>
+        </div>
 
-		<tr class="site">
-			<td>
-				<label class="switch">
-				<input type="checkbox" id="adfly">
-				<span class="slider"></span>
-			</label>
-		</td>
-		<td>Adf.ly (+55 Sites)</td>
+        <div id="script-sites-list">
 
-		<tr class="site">
-			<td>
-				<label class="switch">
-				<input type="checkbox" id="shst">
-				<span class="slider"></span>
-			</label>
-		</td>
-		<td>Sh.st (+14 Sites)</td>
+            <!-- ADF.LY -->
+            <div class="section-row">
+                <div class="site-toggle">
+                    <label class="switch">
+                        <input type="checkbox" id="adfly">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <div class="site-name">ADF.LY</div>
+            </div>
 
-		<tr class="site">
-			<td>
-				<label class="switch">
-				<input type="checkbox" id="shinkme">
-				<span class="slider"></span>
-			</label>
-		</td>
-		<td>ShinkMe (+2 Sites)</td>
+            <!-- SH.ST -->
+            <div class="section-row">
+                <div class="site-toggle">
+                    <label class="switch">
+                        <input type="checkbox" id="shst">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <div class="site-name">SH.ST</div>
+            </div>
 
-		<tr class="site">
-			<td>
-				<label class="switch">
-				<input type="checkbox" id="croco">
-				<span class="slider"></span>
-			</label>
-		</td>
-		<td>Croco</td>
+            <!-- SH.ST -->
+            <div class="section-row">
+                <div class="site-toggle">
+                    <label class="switch">
+                        <input type="checkbox" id="shinkme">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <div class="site-name">ShinkMe</div>
+            </div>
 
-		<tr class="site">
-			<td>
-				<label class="switch">
-				<input type="checkbox" id="linkshrink">
-				<span class="slider"></span>
-			</label>
-		</td>
-		<td>LinkShrink</td>
 
-		<tr class="site">
-			<td>
-				<label class="switch">
-				<input type="checkbox" id="bluemediafiles">
-				<span class="slider"></span>
-			</label>
-		</td>
-		<td>BlueMediaFiles</td>
+            <!-- CROCO -->
+            <div class="section-row">
+                <div class="site-toggle">
+                    <label class="switch">
+                        <input type="checkbox" id="croco">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <div class="site-name">CROCO</div>
+            </div>
 
-		<tr class="site">
-			<td>
-				<label class="switch">
-				<input type="checkbox" id="spam">
-				<span class="slider"></span>
-			</label>
-		</td>
-		<td>Popups Sites [Auto-Close] (+57 Sites)</td>
+            <!-- LINK SHRINK -->
+            <div class="section-row">
+                <div class="site-toggle">
+                    <label class="switch">
+                        <input type="checkbox" id="linkshrink">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <div class="site-name">LinkShrink</div>
+            </div>
 
-		<tr class="site">
-			<td>
-				<label class="switch">
-				<input type="checkbox" id="ouo" disabled>
-				<span class="slider"></span>
-			</label>
-		</td>
-		<td>Ouo.io (Current disabled)</td>
+            <!-- BLUE MEDIA FILES -->
+            <div class="section-row">
+                <div class="site-toggle">
+                    <label class="switch">
+                        <input type="checkbox" id="bluemediafiles">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <div class="site-name">BlueMediaFiles</div>
+            </div>
 
-	</table>
-	
-	
+        </div>
+
+    </div>
+
+    <div class="section-grid">
+        <div class="features-row no-upperline">
+            <div class="site-toggle">
+                <label class="switch">
+                    <input type="checkbox" id="spam">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="site-name">Automatically close spam popups</div>
+        </div>
+    </div>
+
 </body>
+
 </html>

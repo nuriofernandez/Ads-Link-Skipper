@@ -12,14 +12,14 @@ setTimeout(skip, 100);
 var html = '<div id="Notify" style="position: fixed;bottom: 10px;color: #fff;background-color: #ff6060;width: 100%;z-index: 999999;text-align: center;font-size: 23px;padding: 21px;"><p>This site can be damaged by extension Ads link skiper. If you found any error please report it to personal@xxnurioxx.me </p><b>REMEMBER DISABLE OTHERS AD BLOCKERS AT THIS SITE.</b><br><br>  <a href="javascript:document.getElementById(\'Notify\').remove();" style="color: #fff;font-weight: 800;background-color: #d95b57;border-radius: 15px;padding: 8px;margin-left: 20px;">Hide this</a></div>';
 var div = document.createElement('div');
 div.innerHTML = html;
-window.onload = function(){document.body.appendChild(div);}
+window.onload = function() { document.body.appendChild(div); }
 
 function skip() {
     var time = setTimeout(skip, 100);
 
-    for(var a=1; a<xpL('/html/body/script'); a++){
-	   if(!xp('/html/body/script['+a+']').innerHTML.startsWith('document.getElementById("btd")'))continue;
-        var btnelement = xp('/html/body/script['+a+']').innerHTML.split('revC("')[1].split('"),')[0];
+    for (var a = 1; a < xpL('/html/body/script'); a++) {
+        if (!xp('/html/body/script[' + a + ']').innerHTML.startsWith('document.getElementById("btd")')) continue;
+        var btnelement = xp('/html/body/script[' + a + ']').innerHTML.split('revC("')[1].split('"),')[0];
         var url = revC(btnelement);
         if (url.length > 0) {
             window.location.replace(url);
@@ -27,7 +27,7 @@ function skip() {
             return;
         }
     }
-    
+
 }
 
 /** xPath length funciton */
@@ -37,7 +37,7 @@ function xpL(query) {
 
 /** xPath function */
 function xp(query) {
-	return document.evaluate(query, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue
+    return document.evaluate(query, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue
 }
 
 /* Decrypt the url result function */
