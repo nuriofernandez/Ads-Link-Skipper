@@ -7,55 +7,44 @@ Background script
 
 **/
 
-
 // Enabled sites variable switch
-var enabled_sites = {
+var enabledSites = {
     adfly: true,
     shinkme: true,
     shst: true,
     croco: true,
     linkshrink: true,
-    ouo: true,
     bluemediafiles: true,
     spam: true,
-    captcha: false,
-    cuon: false
 }
 
 /******************** Storage manager start */
 
-function save_sites() {
+function saveSites() {
     chrome.storage.local.set({
-        'enabled_sites': enabled_sites
+        'enabledSites': enabledSites
     }, function(result) {
         console.log("Updated data.");
     });
 }
 
-chrome.storage.local.get('enabled_sites', function(result) {
+chrome.storage.local.get('enabledSites', function(result) {
     if (result == null) return;
-    enabled_sites = result.enabled_sites;
+
+    enabledSites = result.enabledSites;
     console.log("Successful loaded data.");
 
-    if (enabled_sites == null || (enabled_sites != null && enabled_sites.adfly == null)) {
-        enabled_sites = {
+    // In case that stored sites was invalid, redefine sites map.
+    if (enabledSites == null || (enabledSites != null && enabledSites.adfly == null)) {
+        enabledSites = {
             adfly: true,
             shinkme: true,
             shst: true,
             croco: true,
             linkshrink: true,
-            ouo: true,
             bluemediafiles: true,
             spam: true,
-            captcha: false,
-            cuon: false
         }
-    }
-
-    // Disable disabled functions
-    if ((enabled_sites != null && enabled_sites.captcha == null)) {
-        enabled_sites.captcha = false;
-        enabled_sites.cuon = false;
     }
 
 });
@@ -66,7 +55,7 @@ chrome.storage.local.get('enabled_sites', function(result) {
 /******************** Domain list start */
 
 // sh.st domain list
-var requestFilter_sh = {
+var requestFilterSh = {
     urls: [
         "*://*.sh.st/*",
         "*://*.clkmein.com/*",
@@ -87,7 +76,7 @@ var requestFilter_sh = {
 };
 
 // Spam/Popup's domain list
-var requestFilter_spam = {
+var requestFilterSpam = {
     urls: [
         "*://*.higheurest.com/*",
         "*://*.adviewgroup.com/*",
@@ -161,7 +150,7 @@ var requestFilter_spam = {
 };
 
 // Adf.ly domains list
-var requestFilter_adf = {
+var requestFilterAdf = {
     urls: [
         "*://*.larati.net/*",
         "*://*.xterca.net/*",
@@ -220,7 +209,7 @@ var requestFilter_adf = {
 };
 
 // shink.me domain list
-var requestFilter_shinkme = {
+var requestFilterShinkme = {
     urls: [
         "*://*.shon.xyz/*",
         "*://*.fas.li/*",
@@ -229,44 +218,22 @@ var requestFilter_shinkme = {
     ]
 };
 
-// ouo.io domain list
-var requestFilter_ouo = {
-    urls: [
-        "*://*.ouo.io/*",
-        "*://*.ouo.press/*"
-    ]
-};
-
-// cuon domain list
-var requestFilter_cuon = {
-    urls: [
-        "*://*.cuon.io/*"
-    ]
-};
-
-// tmearn domain list
-var requestFilter_tmearn = {
-    urls: [
-        "*://*.tmearn.com/*"
-    ]
-};
-
 // croco domain list
-var requestFilter_croco = {
+var requestFilterCroco = {
     urls: [
         "*://*.croco.site/*"
     ]
 };
 
 // LinkShrink domain list
-var requestFilter_linkshrink = {
+var requestFilterLinkshrink = {
     urls: [
         "*://*.linkshrink.net/*"
     ]
 };
 
 // Bluemediafiles domain list.
-var requestFilter_bluemefi = {
+var requestFilterBluemefi = {
     urls: [
         "*://*.bluemediafiles.com/*"
     ]
@@ -279,47 +246,37 @@ var requestFilter_bluemefi = {
 
 /** Bluemediafiles sites **/
 chrome.webRequest.onCompleted.addListener(function(details) {
-    if (!enabled_sites.bluemediafiles) return;
+    if (!enabledSites.bluemediafiles) return;
     chrome.tabs.executeScript(details.tabId, {
         file: "js/sites/BlueMediaFiles.js",
         runAt: "document_start"
     });
-}, requestFilter_bluemefi);
+}, requestFilterBluemefi);
 
 
 /** Adf.ly sites **/
 chrome.webRequest.onCompleted.addListener(function(details) {
-    if (!enabled_sites.adfly) return;
+    if (!enabledSites.adfly) return;
     chrome.tabs.executeScript(details.tabId, {
         file: "js/sites/adfly.js",
         runAt: "document_start"
     });
-}, requestFilter_adf);
-
-
-/** Cuon.io sites **/
-chrome.webRequest.onCompleted.addListener(function(details) {
-    if (!enabled_sites.cuon) return;
-    chrome.tabs.executeScript(details.tabId, {
-        file: "js/sites/cuon.io.js",
-        runAt: "document_start"
-    });
-}, requestFilter_cuon);
+}, requestFilterAdf);
 
 
 /** Croco.sites sites **/
 chrome.webRequest.onCompleted.addListener(function(details) {
-    if (!enabled_sites.croco) return;
+    if (!enabledSites.croco) return;
     chrome.tabs.executeScript(details.tabId, {
         file: "js/sites/croco.js",
         runAt: "document_start"
     });
-}, requestFilter_croco);
+}, requestFilterCroco);
 
 
 /** ShinkMe sites **/
 chrome.webRequest.onCompleted.addListener(function(details) {
-    if (!enabled_sites.shinkme) return;
+    if (!enabledSites.shinkme) return;
     if (details.type == "main_frame" && details.url.indexOf("shink.in") != -1) chrome.tabs.update(details.tabId, {
         url: details.url.replace("shink.in", "shink.me")
     });
@@ -327,100 +284,21 @@ chrome.webRequest.onCompleted.addListener(function(details) {
         file: "js/sites/shinkme.js",
         runAt: "document_start"
     });
-}, requestFilter_shinkme);
-
-/** ouo.io sites **/
-
-/* CURRENT DISABLED
-chrome.webRequest.onCompleted.addListener(function(details) {
-    if (!enabled_sites.ouo || details.url.split("/")[3] == "rgo" && details.type != "main_frame") return;
-    chrome.tabs.executeScript(details.tabId, {
-        file: "js/sites/ouo.js",
-        runAt: "document_start"
-    });
-}, requestFilter_ouo);
-
-
-chrome.webRequest.onBeforeSendHeaders.addListener(function(details) {
-    if (!enabled_sites.ouo || details.url.split("/")[3] != "go" || details.url.split("/").lenght == 5) return;
-    var newRef = "http://ouo.io/" + details.url.split("/")[4];
-    var gotRef = false;
-    for (var n in details.requestHeaders) {
-        gotRef = details.requestHeaders[n].name.toLowerCase() == "referer";
-        if (gotRef) break;
-    }
-    if (!gotRef) chrome.tabs.update(details.tabId, {
-        "url": newRef
-    });
-    console.log("Unbugged ouo: " + newRef);
-    return {
-        requestHeaders: details.requestHeaders
-    };
-}, requestFilter_ouo, ['requestHeaders', 'blocking']);
-
-
-chrome.webRequest.onHeadersReceived.addListener(function (details) {
-    if(details.type != "main_frame") return;
-    for (var n in details.responseHeaders) {
-        if(details.responseHeaders[n].name.toLowerCase() != "location") continue;
-        let location = details.responseHeaders[n].value;
-        console.log(details.initiator + "," + location);
-    }
-    console.log(details);
-},requestFilter_ouo,["blocking", "responseHeaders"]);
-
-*/
-
-chrome.webRequest.onCompleted.addListener(function(details) {
-    if(details.type != "main_frame") return;
-    console.log(details);
-},requestFilter_ouo, ['responseHeaders']);
-
-/*
-
-chrome.webRequest.onBeforeSendHeaders.addListener(function(details) {
-    //if (!enabled_sites.ouo || details.url.split("/")[3] != "go" || details.url.split("/").lenght == 5) return;
-    /*
-    var newRef = "http://ouo.io/" + details.url.split("/")[4];
-    var gotRef = false;
-    for (var n in details.requestHeaders) {
-        gotRef = details.requestHeaders[n].name.toLowerCase() == "referer";
-        if (gotRef) break;
-    }
-    if (!gotRef) chrome.tabs.update(details.tabId, {
-        "url": newRef
-    });
-    console.log("Unbugged ouo: " + newRef);
-    return {
-        requestHeaders: details.requestHeaders
-    };
-    
-
-    console.log(details);
-
-}, requestFilter_ouo, ['requestHeaders', 'blocking']);
-*/
+}, requestFilterShinkme);
 
 /** LinkShrink sites **/
 chrome.webRequest.onCompleted.addListener(function(details) {
-    if (!enabled_sites.linkshrink) return;
+    if (!enabledSites.linkshrink) return;
     chrome.tabs.executeScript(details.tabId, {
         file: "js/sites/linkshrink.js",
         runAt: "document_start"
     });
-}, requestFilter_linkshrink);
-
-
-/** SpamShit sites **/
-chrome.webRequest.onCompleted.addListener(function(details) {
-    if (!enabled_sites.spam) return;
-    if (details.type == "main_frame") chrome.tabs.remove(details.tabId);
-}, requestFilter_spam);
+}, requestFilterLinkshrink);
 
 
 /** Sh.sh sites **/
 chrome.webRequest.onBeforeSendHeaders.addListener(function(details) {
-    if (!enabled_sites.shst) return;
+    if (!enabledSites.shst) return;
     var headers = details.requestHeaders;
     headers = headers.filter(function(x) {
         return x.name !== 'User-Agent';
@@ -428,6 +306,13 @@ chrome.webRequest.onBeforeSendHeaders.addListener(function(details) {
     return {
         requestHeaders: headers
     };
-}, requestFilter_sh, ['requestHeaders', 'blocking']);
+}, requestFilterSh, ['requestHeaders', 'blocking']);
+
+
+/** SpamShit sites **/
+chrome.webRequest.onCompleted.addListener(function(details) {
+    if (!enabledSites.spam) return;
+    if (details.type == "main_frame") chrome.tabs.remove(details.tabId);
+}, requestFilterSpam);
 
 /******************** Sites script's end */

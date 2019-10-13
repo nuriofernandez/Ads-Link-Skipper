@@ -1,27 +1,23 @@
-# Ads-Link-Skiper
-Chrome Extension that skip ads on sites like adf.ly and prevent spam popups
+# Ads Link Skiper
+Ads Link Skiper is a Google Chrome Extension that skips link shorteners ads and prevent spam popups.
 
+#### You can install this extension directly at the following web site:
 https://chrome.google.com/webstore/detail/ads-link-skiper/bkpeohkfimdfogdnpcnokjkbpankkmil
 
-Suported sites:
+## Suported link shorteners sites:
 
+#### CROCO
 * croco.site
 
-* sh.st
-* clkmein.com
-* viid.me
-* xiw34.com
-* destyy.com
-* ceesty.com
-* clkme.me
-* cllkme.com
-* corneey.com
-* festyy.com
-* gestyy.com
-* jnw0.com
-* qaafa.com
-* wiid.me
-  
+#### LINK SHRINK
+* linkshrink.net
+
+#### SHINK ME
+* shink.me
+* shink.in
+* fas.li
+
+#### ADF.LY
 * agileurbia.com
 * threadsphere.bid
 * zipteria.com
@@ -58,8 +54,23 @@ Suported sites:
 * zo.ee
 * skamason.com
 
-* linkshrink.net
+#### SH.ST
+* sh.st
+* clkmein.com
+* viid.me
+* xiw34.com
+* destyy.com
+* ceesty.com
+* clkme.me
+* cllkme.com
+* corneey.com
+* festyy.com
+* gestyy.com
+* jnw0.com
+* qaafa.com
+* wiid.me
 
+#### AUTOMATICALLY CLOSED SPAM SITES
 * gamezjet.com
 * fftrak.pro
 * translationbuddy.com
@@ -109,7 +120,3 @@ Suported sites:
 * medianewpage.com
 * muzicplay.com
 * newtabtv.com
-
-* shink.me
-* shink.in
-* fas.li

@@ -1,10 +1,10 @@
 {
     "name": "Ads Link Skipper",
-    "version": "1.6.3",
+    "version": "1.7.1",
     "description": "Skip ads on sites like adf.ly and prevent spam popups",
-    "author": [ {
+    "author": [{
         "name": "xXNurioXx",
-        "email": "xxnurioxx@gmail.com"
+        "email": "personal@nurio.me"
     }],
     "permissions": [
         "tabs",
@@ -18,10 +18,6 @@
 
         "*://*.ouo.io/*",
         "*://*.ouo.press/*",
-
-        "*://*.cuon.io/*",
-
-        "*://*.tmearn.com/*",
 
         "*://*.sh.st/*",
         "*://*.clkmein.com/*",
@@ -37,7 +33,7 @@
         "*://*.jnw0.com/*",
         "*://*.qaafa.com/*",
         "*://*.wiid.me/*",
-        
+
         "*://*.larati.net/*",
         "*://*.xterca.net/*",
         "*://*.evassmat.com/*",
@@ -166,9 +162,6 @@
         "*://*.shink.in/*",
         "*://*.shon.xyz/*",
         "*://*.fas.li/*",
-
-        "*://*.jzrputtbut.net/*",
-        "*://*.linkbucks.com/*",
 
         "*://*.bluemediafiles.com/*"
     ],
