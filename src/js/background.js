@@ -14,7 +14,6 @@ var enabledSites = {
     shst: true,
     croco: true,
     linkshrink: true,
-    ouo: true,
     bluemediafiles: true,
     spam: true,
 }
@@ -43,7 +42,6 @@ chrome.storage.local.get('enabledSites', function(result) {
             shst: true,
             croco: true,
             linkshrink: true,
-            ouo: true,
             bluemediafiles: true,
             spam: true,
         }
