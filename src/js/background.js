@@ -152,6 +152,8 @@ var requestFilterSpam = {
 // Adf.ly domains list
 var requestFilterAdf = {
     urls: [
+        "*://*.scadonsak.com/*",
+        "*://*.cowner.net/*",
         "*://*.larati.net/*",
         "*://*.xterca.net/*",
         "*://*.evassmat.com/*",

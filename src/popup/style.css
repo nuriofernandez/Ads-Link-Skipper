@@ -80,8 +80,8 @@
 
 .features-row {
     display              : grid;
-    grid-template-columns: 40px 210px;
-    grid-gap             : 20px;
+    grid-template-columns: 40px 220px;
+    grid-gap             : 18px;
     padding              : 4px 0px;
     border-top           : 1px solid #e0e0e0;
 }

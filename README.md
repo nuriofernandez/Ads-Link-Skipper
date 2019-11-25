@@ -18,6 +18,8 @@ https://chrome.google.com/webstore/detail/ads-link-skiper/bkpeohkfimdfogdnpcnokj
 * fas.li
 
 #### ADF.LY
+* scadonsak.com
+* cowner.net
 * agileurbia.com
 * threadsphere.bid
 * zipteria.com
