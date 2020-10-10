@@ -130,6 +130,7 @@ var requestFilterSpam = {
 var requestFilterAdf = {
     urls: [
         "*://*.atharori.net/*",
+        "*://*.gatustox.net/*",
         "*://*.homoluath.com/*",
         "*://*.scuseami.net/*",
         "*://*.gusimp.net/*",
