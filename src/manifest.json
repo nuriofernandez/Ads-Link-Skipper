@@ -8,8 +8,6 @@
     }],
 
     "permissions": [
-        "tabs",
-        "activeTab",
         "webRequest",
         "webNavigation",
         "webRequestBlocking",
@@ -21,21 +19,6 @@
 
         "*://*.ouo.io/*",
         "*://*.ouo.press/*",
-
-        "*://*.sh.st/*",
-        "*://*.clkmein.com/*",
-        "*://*.viid.me/*",
-        "*://*.xiw34.com/*",
-        "*://*.destyy.com/*",
-        "*://*.ceesty.com/*",
-        "*://*.clkme.me/*",
-        "*://*.cllkme.com/*",
-        "*://*.corneey.com/*",
-        "*://*.festyy.com/*",
-        "*://*.gestyy.com/*",
-        "*://*.jnw0.com/*",
-        "*://*.qaafa.com/*",
-        "*://*.wiid.me/*",
 
         "*://*.atharori.net/*",
         "*://*.homoluath.com/*",

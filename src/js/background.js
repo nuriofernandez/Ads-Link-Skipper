@@ -11,7 +11,6 @@ Background script
 var enabledSites = {
     adfly: true,
     shinkme: true,
-    shst: true,
     croco: true,
     linkshrink: true,
     bluemediafiles: true,
@@ -39,7 +38,6 @@ chrome.storage.local.get('enabledSites', function(result) {
         enabledSites = {
             adfly: true,
             shinkme: true,
-            shst: true,
             croco: true,
             linkshrink: true,
             bluemediafiles: true,
@@ -53,27 +51,6 @@ chrome.storage.local.get('enabledSites', function(result) {
 
 
 /******************** Domain list start */
-
-// sh.st domain list
-var requestFilterSh = {
-    urls: [
-        "*://*.sh.st/*",
-        "*://*.clkmein.com/*",
-        "*://*.viid.me/*",
-        "*://*.xiw34.com/*",
-        "*://*.destyy.com/*",
-        "*://*.ceesty.com/*",
-        "*://*.clkme.me/*",
-        "*://*.cllkme.com/*",
-        "*://*.corneey.com/*",
-        "*://*.festyy.com/*",
-        "*://*.gestyy.com/*",
-        "*://*.jnw0.com/*",
-        "*://*.qaafa.com/*",
-        "*://*.wiid.me/*",
-        "*://*.xiw34.com/*"
-    ]
-};
 
 // Spam/Popup's domain list
 var requestFilterSpam = {
@@ -300,20 +277,6 @@ chrome.webRequest.onCompleted.addListener(function(details) {
         runAt: "document_start"
     });
 }, requestFilterLinkshrink);
-
-
-/** Sh.sh sites **/
-chrome.webRequest.onBeforeSendHeaders.addListener(function(details) {
-    if (!enabledSites.shst) return;
-    var headers = details.requestHeaders;
-    headers = headers.filter(function(x) {
-        return x.name !== 'User-Agent';
-    });
-    return {
-        requestHeaders: headers
-    };
-}, requestFilterSh, ['requestHeaders', 'blocking']);
-
 
 /** SpamShit sites **/
 chrome.webRequest.onCompleted.addListener(function(details) {
