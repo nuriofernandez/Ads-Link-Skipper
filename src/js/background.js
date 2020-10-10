@@ -152,6 +152,7 @@ var requestFilterSpam = {
 // Adf.ly domains list
 var requestFilterAdf = {
     urls: [
+        "*://*.atharori.net/*",
         "*://*.homoluath.com/*",
         "*://*.scuseami.net/*",
         "*://*.gusimp.net/*",
