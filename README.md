@@ -1,6 +1,8 @@
 # Ads Link Skiper
 Ads Link Skiper is a Google Chrome Extension that skips link shorteners ads and prevent spam popups.
 
+![Ads Link Skiper popup capture](https://i.imgur.com/bQE61oT.png)
+
 #### You can install this extension directly at the following web site:
 https://chrome.google.com/webstore/detail/ads-link-skiper/bkpeohkfimdfogdnpcnokjkbpankkmil
 
