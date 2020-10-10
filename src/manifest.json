@@ -6,14 +6,17 @@
         "name": "xXNurioXx",
         "email": "personal@nurio.me"
     }],
+
     "permissions": [
         "tabs",
         "activeTab",
         "webRequest",
         "webNavigation",
         "webRequestBlocking",
-        "storage",
+        "storage"
+    ],
 
+    "optional_permissions": [
         "*://*.croco.site/*",
 
         "*://*.ouo.io/*",
