@@ -1,37 +1,37 @@
-window.addEventListener("load", function() {
+window.addEventListener("load", () => {
 
-    var adfly = document.getElementById("adfly");
-    adfly.addEventListener("click", function() {
+    const adfly = document.getElementById("adfly");
+    adfly.addEventListener("click", () => {
         chrome.extension.getBackgroundPage().enabledSites.adfly = adfly.checked;
         chrome.extension.getBackgroundPage().saveSites();
     });
 
-    var shinkme = document.getElementById("shinkme");
-    shinkme.addEventListener("click", function() {
+    const shinkme = document.getElementById("shinkme");
+    shinkme.addEventListener("click", () => {
         chrome.extension.getBackgroundPage().enabledSites.shinkme = shinkme.checked;
         chrome.extension.getBackgroundPage().saveSites();
     });
 
-    var croco = document.getElementById("croco");
-    croco.addEventListener("click", function() {
+    const croco = document.getElementById("croco");
+    croco.addEventListener("click", () => {
         chrome.extension.getBackgroundPage().enabledSites.croco = croco.checked;
         chrome.extension.getBackgroundPage().saveSites();
     });
 
-    var linkshrink = document.getElementById("linkshrink");
-    linkshrink.addEventListener("click", function() {
+    const linkshrink = document.getElementById("linkshrink");
+    linkshrink.addEventListener("click", () => {
         chrome.extension.getBackgroundPage().enabledSites.linkshrink = linkshrink.checked;
         chrome.extension.getBackgroundPage().saveSites();
     });
 
-    var bluemediafiles = document.getElementById("bluemediafiles");
-    bluemediafiles.addEventListener("click", function() {
+    const bluemediafiles = document.getElementById("bluemediafiles");
+    bluemediafiles.addEventListener("click", () => {
         chrome.extension.getBackgroundPage().enabledSites.bluemediafiles = bluemediafiles.checked;
         chrome.extension.getBackgroundPage().saveSites();
     });
 
-    var spam = document.getElementById("spam");
-    spam.addEventListener("click", function() {
+    const spam = document.getElementById("spam");
+    spam.addEventListener("click", () => {
         chrome.extension.getBackgroundPage().enabledSites.spam = spam.checked;
         chrome.extension.getBackgroundPage().saveSites();
     });
