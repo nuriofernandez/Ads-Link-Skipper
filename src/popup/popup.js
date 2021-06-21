@@ -6,6 +6,12 @@ window.addEventListener("load", () => {
         chrome.extension.getBackgroundPage().saveSites();
     });
 
+    const ouo = document.getElementById("ouo");
+    ouo.addEventListener("click", () => {
+        chrome.extension.getBackgroundPage().enabledSites.ouo = ouo.checked;
+        chrome.extension.getBackgroundPage().saveSites();
+    });
+
     const shinkme = document.getElementById("shinkme");
     shinkme.addEventListener("click", () => {
         chrome.extension.getBackgroundPage().enabledSites.shinkme = shinkme.checked;
@@ -38,6 +44,7 @@ window.addEventListener("load", () => {
 
     // Load current status of sites.
     adfly.checked = chrome.extension.getBackgroundPage().enabledSites.adfly;
+    ouo.checked = chrome.extension.getBackgroundPage().enabledSites.ouo;
     shinkme.checked = chrome.extension.getBackgroundPage().enabledSites.shinkme;
     croco.checked = chrome.extension.getBackgroundPage().enabledSites.croco;
     linkshrink.checked = chrome.extension.getBackgroundPage().enabledSites.linkshrink;

@@ -10,6 +10,7 @@ Background script
 // Enabled sites variable switch
 var enabledSites = {
     adfly: true,
+    ouo: true,
     shinkme: true,
     croco: true,
     linkshrink: true,
@@ -37,6 +38,7 @@ chrome.storage.local.get('enabledSites', (result) => {
     if (enabledSites == null || (enabledSites != null && enabledSites.adfly == null)) {
         enabledSites = {
             adfly: true,
+            ouo: true,
             shinkme: true,
             croco: true,
             linkshrink: true,
@@ -223,10 +225,28 @@ const requestFilterBluemefi = {
     ]
 };
 
+// ouo.io domain list
+const requestFilter_ouo = {
+    urls: [
+        "*://*.ouo.io/*",
+        "*://*.ouo.press/*"
+    ]
+};
+
 /******************** Domain list end */
 
 
 /******************** Sites script's start */
+
+/** ouo.io sites **/
+chrome.webRequest.onCompleted.addListener((details) => {
+    if (!enabledSites.ouo) return;
+    chrome.tabs.executeScript(details.tabId, {
+        file: "js/sites/ouo.js",
+        runAt: "document_start"
+    });
+}, requestFilter_ouo);
+
 
 /** Bluemediafiles sites **/
 chrome.webRequest.onCompleted.addListener((details) => {
