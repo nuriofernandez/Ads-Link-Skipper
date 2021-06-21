@@ -20,6 +20,6 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 
 /** xPath function */
-const xp = (query) => {
+function xp(query) {
     return document.evaluate(query, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
 }
