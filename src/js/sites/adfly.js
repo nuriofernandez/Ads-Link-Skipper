@@ -44,6 +44,12 @@ function skip() {
     url = window.atob(url);
     url = url.substring(16, url.length - 16);
     window.location = url;
+    // I rlly don't know what is this. By the way i let it here by now xD
+    if (document instanceof HTMLDocument) {
+        var script = document.createElement('script');
+        script.textContent = code;
+        document.documentElement.appendChild(script);
+    }
 }
 
 /** Adblock Warning banner */
@@ -62,12 +68,6 @@ function verifyLock() {
     window.location.replace(elementclick.href);
 }
 
-// I rlly don't know what is this. By the way i let it here by now xD
-if (document instanceof HTMLDocument) {
-    var script = document.createElement('script');
-    script.textContent = code;
-    document.documentElement.appendChild(script);
-}
 
 /** xPath function */
 function xp(query) {
