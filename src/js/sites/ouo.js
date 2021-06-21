@@ -10,11 +10,11 @@ Script for ouo.io
 window.addEventListener("load", () => {
 
 	// Locate the skip button
-	var btn = xp('//*[@id="btn-main"]');
+	const btn = xp('//*[@id="btn-main"]');
 	
 	// When the button have the value "get link" submit the form
 	if(btn != null && btn.innerHTML == "Get Link"){
-		var form = xp('/html/body/section/div/div/div/div/div/form');
+		const form = xp('/html/body/section/div/div/div/div/div/form');
 		form.submit();
 	}
 	
