@@ -9,18 +9,18 @@ Script for linkshrink.net
 
 setTimeout(skip, 100);
 
-var html = '<div id="Notify" style="position: fixed;bottom: 10px;color: #fff;background-color: #ff6060;width: 100%;z-index: 999999;text-align: center;font-size: 23px;padding: 21px;"><p>This site can be damaged by extension Ads link skiper. If you found any error please report it to personal@xxnurioxx.me </p><b>REMEMBER DISABLE OTHERS AD BLOCKERS AT THIS SITE.</b><br><br>  <a href="javascript:document.getElementById(\'Notify\').remove();" style="color: #fff;font-weight: 800;background-color: #d95b57;border-radius: 15px;padding: 8px;margin-left: 20px;">Hide this</a></div>';
-var div = document.createElement('div');
+const html = '<div id="Notify" style="position: fixed;bottom: 10px;color: #fff;background-color: #ff6060;width: 100%;z-index: 999999;text-align: center;font-size: 23px;padding: 21px;"><p>This site can be damaged by extension Ads link skiper. If you found any error please report it to personal@xxnurioxx.me </p><b>REMEMBER DISABLE OTHERS AD BLOCKERS AT THIS SITE.</b><br><br>  <a href="javascript:document.getElementById(\'Notify\').remove();" style="color: #fff;font-weight: 800;background-color: #d95b57;border-radius: 15px;padding: 8px;margin-left: 20px;">Hide this</a></div>';
+const div = document.createElement('div');
 div.innerHTML = html;
-window.onload = function() { document.body.appendChild(div); }
+window.onload = () => { document.body.appendChild(div); }
 
 function skip() {
-    var time = setTimeout(skip, 100);
+    const time = setTimeout(skip, 100);
 
-    for (var a = 1; a < xpL('/html/body/script'); a++) {
+    for (let a = 1; a < xpL('/html/body/script'); a++) {
         if (!xp('/html/body/script[' + a + ']').innerHTML.startsWith('document.getElementById("btd")')) continue;
-        var btnelement = xp('/html/body/script[' + a + ']').innerHTML.split('revC("')[1].split('"),')[0];
-        var url = revC(btnelement);
+        const btnelement = xp('/html/body/script[' + a + ']').innerHTML.split('revC("')[1].split('"),')[0];
+        const url = revC(btnelement);
         if (url.length > 0) {
             window.location.replace(url);
             clearTimeout(time);
@@ -42,12 +42,12 @@ function xp(query) {
 
 /* Decrypt the url result function */
 function revC(ine) {
-    var b64 = {
+    const b64 = {
         _keyStr: "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=",
-        encode: function(e) {
-            var t = "";
-            var n, r, i, s, o, u, a;
-            var f = 0;
+        encode: (e) => {
+            let t = "";
+            let n, r, i, s, o, u, a;
+            let f = 0;
             e = b64._utf8_encode(e);
             while (f < e.length) {
                 n = e.charCodeAt(f++);
@@ -66,11 +66,11 @@ function revC(ine) {
             }
             return t
         },
-        decode: function(e) {
-            var t = "";
-            var n, r, i;
-            var s, o, u, a;
-            var f = 0;
+        decode: (e) => {
+            let t = "";
+            let n, r, i;
+            let s, o, u, a;
+            let f = 0;
             e = e.replace(/[^A-Za-z0-9+/=]/g, "");
             while (f < e.length) {
                 s = this._keyStr.indexOf(e.charAt(f++));
@@ -91,11 +91,11 @@ function revC(ine) {
             t = b64._utf8_decode(t);
             return t
         },
-        _utf8_encode: function(e) {
+        _utf8_encode: (e) => {
             e = e.replace(/rn/g, "n");
-            var t = "";
-            for (var n = 0; n < e.length; n++) {
-                var r = e.charCodeAt(n);
+            let t = "";
+            for (let n = 0; n < e.length; n++) {
+                let r = e.charCodeAt(n);
                 if (r < 128) {
                     t += String.fromCharCode(r)
                 } else if (r > 127 && r < 2048) {
@@ -109,10 +109,10 @@ function revC(ine) {
             }
             return t
         },
-        _utf8_decode: function(e) {
-            var t = "";
-            var n = 0;
-            var r = c1 = c2 = 0;
+        _utf8_decode: (e) => {
+            let t = "";
+            let n = 0;
+            let r = c1 = c2 = 0;
             while (n < e.length) {
                 r = e.charCodeAt(n);
                 if (r < 128) {
