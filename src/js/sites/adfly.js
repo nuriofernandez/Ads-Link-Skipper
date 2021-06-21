@@ -11,7 +11,7 @@ Script for adf.ly
 // Thank you to tote.ervin (PD: Add me to your code too!)
 
 /** Skip adf.ly function */
-const skip = () => {
+function skip() {
     const ysmm = /ysmm = \'(.*?)\';/gi;
     let code = ysmm.exec(document.getElementsByTagName('html')[0].innerHTML);
     if (code == null) return;
@@ -53,11 +53,11 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /** xPath function */
-const xp = (query) => {
+function xp(query) {
     return document.evaluate(query, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue
 }
 
-const verifyLock = () => {
+function verifyLock() {
     const time = setTimeout(verifyLock, 500);
     const elementclick = xp('//*[@id="continue"]/div/a');
     if (!(elementclick != null && elementclick.href.length > 0)) return;
