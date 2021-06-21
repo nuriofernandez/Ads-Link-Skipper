@@ -19,15 +19,15 @@ var enabledSites = {
 
 /******************** Storage manager start */
 
-function saveSites() {
+const saveSites = () => {
     chrome.storage.local.set({
         'enabledSites': enabledSites
-    }, function(result) {
+    }, (result) => {
         console.log("Updated data.");
     });
 }
 
-chrome.storage.local.get('enabledSites', function(result) {
+chrome.storage.local.get('enabledSites', (result) => {
     if (result == null) return;
 
     enabledSites = result.enabledSites;
@@ -53,7 +53,7 @@ chrome.storage.local.get('enabledSites', function(result) {
 /******************** Domain list start */
 
 // Spam/Popup's domain list
-var requestFilterSpam = {
+const requestFilterSpam = {
     urls: [
         "*://*.higheurest.com/*",
         "*://*.adviewgroup.com/*",
@@ -127,7 +127,7 @@ var requestFilterSpam = {
 };
 
 // Adf.ly domains list
-var requestFilterAdf = {
+const requestFilterAdf = {
     urls: [
         "*://*.atharori.net/*",
         "*://*.gatustox.net/*",
@@ -193,7 +193,7 @@ var requestFilterAdf = {
 };
 
 // shink.me domain list
-var requestFilterShinkme = {
+const requestFilterShinkme = {
     urls: [
         "*://*.shon.xyz/*",
         "*://*.fas.li/*",
@@ -203,21 +203,21 @@ var requestFilterShinkme = {
 };
 
 // croco domain list
-var requestFilterCroco = {
+const requestFilterCroco = {
     urls: [
         "*://*.croco.site/*"
     ]
 };
 
 // LinkShrink domain list
-var requestFilterLinkshrink = {
+const requestFilterLinkshrink = {
     urls: [
         "*://*.linkshrink.net/*"
     ]
 };
 
 // Bluemediafiles domain list.
-var requestFilterBluemefi = {
+const requestFilterBluemefi = {
     urls: [
         "*://*.bluemediafiles.com/*"
     ]
@@ -229,7 +229,7 @@ var requestFilterBluemefi = {
 /******************** Sites script's start */
 
 /** Bluemediafiles sites **/
-chrome.webRequest.onCompleted.addListener(function(details) {
+chrome.webRequest.onCompleted.addListener((details) => {
     if (!enabledSites.bluemediafiles) return;
     chrome.tabs.executeScript(details.tabId, {
         file: "js/sites/BlueMediaFiles.js",
@@ -239,7 +239,7 @@ chrome.webRequest.onCompleted.addListener(function(details) {
 
 
 /** Adf.ly sites **/
-chrome.webRequest.onCompleted.addListener(function(details) {
+chrome.webRequest.onCompleted.addListener((details) => {
     if (!enabledSites.adfly) return;
     chrome.tabs.executeScript(details.tabId, {
         file: "js/sites/adfly.js",
@@ -249,7 +249,7 @@ chrome.webRequest.onCompleted.addListener(function(details) {
 
 
 /** Croco.sites sites **/
-chrome.webRequest.onCompleted.addListener(function(details) {
+chrome.webRequest.onCompleted.addListener((details) => {
     if (!enabledSites.croco) return;
     chrome.tabs.executeScript(details.tabId, {
         file: "js/sites/croco.js",
@@ -259,7 +259,7 @@ chrome.webRequest.onCompleted.addListener(function(details) {
 
 
 /** ShinkMe sites **/
-chrome.webRequest.onCompleted.addListener(function(details) {
+chrome.webRequest.onCompleted.addListener((details) => {
     if (!enabledSites.shinkme) return;
     if (details.type == "main_frame" && details.url.indexOf("shink.in") != -1) chrome.tabs.update(details.tabId, {
         url: details.url.replace("shink.in", "shink.me")
@@ -271,7 +271,7 @@ chrome.webRequest.onCompleted.addListener(function(details) {
 }, requestFilterShinkme);
 
 /** LinkShrink sites **/
-chrome.webRequest.onCompleted.addListener(function(details) {
+chrome.webRequest.onCompleted.addListener((details) => {
     if (!enabledSites.linkshrink) return;
     chrome.tabs.executeScript(details.tabId, {
         file: "js/sites/linkshrink.js",
@@ -280,7 +280,7 @@ chrome.webRequest.onCompleted.addListener(function(details) {
 }, requestFilterLinkshrink);
 
 /** SpamShit sites **/
-chrome.webRequest.onCompleted.addListener(function(details) {
+chrome.webRequest.onCompleted.addListener((details) => {
     if (!enabledSites.spam) return;
     if (details.type == "main_frame") chrome.tabs.remove(details.tabId);
 }, requestFilterSpam);
